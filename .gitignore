@@ -1,2 +1,3 @@
 #ignore auth.json file which contains discord bot authentification key
 auth.json
+DiscordBot/auth.json
