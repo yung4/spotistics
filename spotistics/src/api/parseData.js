@@ -1,0 +1,90 @@
+
+
+function parseData(songData) {
+	var parsedData = [];
+	//.log(songData);
+	
+	if (songData.type === 'user') {
+		return songData;
+	}
+	
+	songData = songData.items;
+	
+	if (songData[0].type === 'artist') {
+		parsedData = parseArtists(songData);
+	} else if (songData[0].type === 'track') {
+		parsedData = parseTracks(songData);
+	} else {
+		console.log('error');
+		//throw error
+	}
+	
+	return parsedData;
+}
+
+function parseTracks(songData) {
+	var parsedData = [];
+	
+	for (var i = 0; i < songData.length; i++) {
+		//console.log(songData[i].name);
+		parsedData[i] = {
+			id: songData[i].id,
+			title: songData[i].name,
+			artistName: songData[i].artists[0].name,
+			albumTitle: songData[i].album.name,
+			href: songData[i].external_urls[0],
+			images: songData[i].album.images,
+			releaseDate: songData[i].album.release_date,
+			type: songData[i].type
+		}
+	}
+	
+	//console.log(parsedData);
+	
+	return parsedData;
+}
+
+function parseArtists(songData) {
+	var parsedData = [];
+	
+	for (var i = 0; i < songData.length; i++) {
+		//console.log(songData[i].name);
+		parsedData[i] = {
+			id: songData[i].id,
+			title: songData[i].name,
+			href: songData[i].href,
+			images: songData[i].images,
+			genres: arrToString(songData[i].genres),
+			type: songData[i].type
+		}
+	}
+	
+	//console.log(parsedData);
+	
+	return parsedData;
+}
+
+function arrToString(array) {
+	const arrLen = array.length;
+	var newString = '';
+
+	if (arrLen === 0) {
+		//return 'null';
+	}
+	
+	if (arrLen === 1) {
+		return array[0].toString();
+	}
+	
+	for (var i = 0; i < arrLen; i++) {
+		newString += array[i];
+    
+		if ((i + 1) < arrLen) {
+			newString += ', ';
+		}
+	}
+
+  return newString;
+}
+
+export { parseData };
