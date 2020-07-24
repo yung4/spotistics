@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/spotistics/static/css/main.69eda509.chunk.css",
+    "main.js": "/spotistics/static/js/main.d694ad72.chunk.js",
+    "main.js.map": "/spotistics/static/js/main.d694ad72.chunk.js.map",
+    "runtime-main.js": "/spotistics/static/js/runtime-main.520f4765.js",
+    "runtime-main.js.map": "/spotistics/static/js/runtime-main.520f4765.js.map",
+    "static/js/2.3ea955ff.chunk.js": "/spotistics/static/js/2.3ea955ff.chunk.js",
+    "static/js/2.3ea955ff.chunk.js.map": "/spotistics/static/js/2.3ea955ff.chunk.js.map",
+    "index.html": "/spotistics/index.html",
+    "precache-manifest.50931c61bc149924fa289b76a3cb81ae.js": "/spotistics/precache-manifest.50931c61bc149924fa289b76a3cb81ae.js",
+    "service-worker.js": "/spotistics/service-worker.js",
+    "static/css/main.69eda509.chunk.css.map": "/spotistics/static/css/main.69eda509.chunk.css.map",
+    "static/js/2.3ea955ff.chunk.js.LICENSE.txt": "/spotistics/static/js/2.3ea955ff.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.520f4765.js",
+    "static/js/2.3ea955ff.chunk.js",
+    "static/css/main.69eda509.chunk.css",
+    "static/js/main.d694ad72.chunk.js"
+  ]
+}
