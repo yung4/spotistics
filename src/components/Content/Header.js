@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, useState  } from 'react';
+import { Container, Row, Col, Modal, Button, Image } from 'react-bootstrap';
 
+import '../../style/header.css';
 
 class Header extends Component {
 	constructor() {
@@ -25,37 +27,65 @@ class Header extends Component {
 			this.componentDidMount();
 		}
 	}
-	
-	render() {
+
+	logout = () => {
+		const [show, setShow] = useState(false);
+
+		const handleClose = () => setShow(false);
+		const handleShow = () => setShow(true);
+		
 		const imgSize = 50;
 		
+		//console.log(this.state.userName);
+	
 		return (
-			<div>
-				<div>
-					<h1>Spotistics</h1>
-				</div>
-				
-				<div>
-					<img src={this.state.userImg}
-						width={imgSize} height={imgSize}
-						alt='User Profile'
-					/>
+			<>
+				<Button variant="link" onClick={handleShow}>
+					{this.state.userName}
 					
-					<p>logged in as {this.state.userName}</p>
-				</div>
+					<Image className='userImg'
+							src={this.state.userImg}
+							width={imgSize} height={imgSize}
+							roundedCircle 
+					/>
+				</Button>
+
+				<Modal show={show} onHide={handleClose}>
+					<Modal.Header closeButton>
+						<Modal.Title>Not you?</Modal.Title>
+					</Modal.Header>
+				<Modal.Body>Click this to logout!</Modal.Body>
 				
-				<button onClick={this.props.artistView}>
-					'Artists'
-				</button>
-				
-				<button onClick={this.props.trackView}>
-					'Tracks'
-				</button>
-				
-				<button onClick={this.props.statsView}>
-					'Statistics'
-				</button>
-			</div>
+				<Modal.Footer>
+					<Button variant="secondary" onClick={handleClose}>
+						Cancel
+					</Button>
+					
+					<Button variant="primary" onClick={this.props.errorFunc}>
+						Logout
+					</Button>
+				</Modal.Footer>
+			  </Modal>
+			</>
+		);
+	}
+	
+	render() {	
+		return (
+			<Container fluid className='header'>
+				<Container>
+					<Row>
+						<Col className='my-auto'>				
+							<h1>Spotistics</h1>
+						</Col>
+						
+					
+						<Col className='logout'>
+							<this.logout/>
+						</Col>
+					</Row>
+				</Container>
+			</Container>
 		)
 	}
 }

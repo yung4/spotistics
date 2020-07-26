@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { Container } from 'react-bootstrap';
 
 import Header from './Header';
+import NavBar from './NavBar';
 import Body from './Body';
 import Footer from './Footer';
 
@@ -23,11 +25,17 @@ class Home extends Component {
 		getUser(this.props.hashFragment.accessToken)
 			.then((response) => {
 				(this.setState({ user: response }));
-				console.log(this.state.user);
+				//console.log(this.state.user);
 			})
 			.catch(this.errorFunc);
 		
 		//console.log(this.state.user);
+	}
+	
+	componentDidUpdate(prevProps, prevState) {
+		if (prevState.contentType !== this.state.contentType) {
+			this.componentDidMount();
+		}
 	}
 	
 	errorFunc = (error) => {
@@ -35,32 +43,24 @@ class Home extends Component {
 		window.location.replace(process.env.REACT_APP_REDIRECT_URI);
 	}
 	
-	artistView = () => {
-		this.setState({ contentType: 0 });
-		console.log('showing artists');
+	setView = (viewNum) => {
+		this.setState({ contentType: viewNum });
+		console.log(this.state.contentType);
 	}
-	
-	trackView = () => {
-		this.setState({ contentType: 1 });
-		console.log('showing tracks');
-	}
-	
-	statsView = () => {
-		this.setState({ contentType: 2 });
-		console.log('showing stats');
-	}
-	
 	
 	render() {
 		return (
 			<div>
-				< Header artistView={this.artistView} trackView={this.trackView} 
-						statsView={this.statsView} user={this.state.user}
+				< Header user={this.state.user} errorFunc={this.errorFunc}
 				/>
 				
-				< Body hashFragment={this.props.hashFragment} contentType={this.state.contentType} 
-						errorFunc={this.errorFunc}
-				/>
+				<Container>
+					< NavBar setView={this.setView}/>
+				
+					< Body hashFragment={this.props.hashFragment} contentType={this.state.contentType} 
+							errorFunc={this.errorFunc}
+					/>
+				</Container>
 				
 				< Footer />
 			</div>

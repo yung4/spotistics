@@ -11,10 +11,15 @@ class App extends Component {
 		super();
 		
 		this.state = {
-			loggedInStatus: getAuthorization(),
-			hashFragment: paramObj,
+			loggedInStatus: false,
+			hashFragment: {},
 		}
-	}	
+	}
+	
+	componentDidMount() {
+		this.setState({loggedInStatus: getAuthorization()});
+		this.setState({hashFragment: paramObj });
+	}
 	
 	render() {
 		console.log(this.state);

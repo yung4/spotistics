@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import TopTrackItem from './TopTrackItem';
-
 import PropTypes from 'prop-types';
+
+import TopTrackItem from './TopTrackItem';
 
 class TopTracks extends Component {
 	render() {

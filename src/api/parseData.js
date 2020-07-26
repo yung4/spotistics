@@ -1,5 +1,3 @@
-
-
 function parseData(songData) {
 	var parsedData = [];
 	//.log(songData);
@@ -26,13 +24,13 @@ function parseTracks(songData) {
 	var parsedData = [];
 	
 	for (var i = 0; i < songData.length; i++) {
-		//console.log(songData[i].name);
+		//console.log(songData[i].external_urls.spotify);
 		parsedData[i] = {
 			id: songData[i].id,
 			title: songData[i].name,
 			artistName: songData[i].artists[0].name,
 			albumTitle: songData[i].album.name,
-			href: songData[i].external_urls[0],
+			href: songData[i].external_urls.spotify,
 			images: songData[i].album.images,
 			releaseDate: songData[i].album.release_date,
 			type: songData[i].type
@@ -48,11 +46,11 @@ function parseArtists(songData) {
 	var parsedData = [];
 	
 	for (var i = 0; i < songData.length; i++) {
-		//console.log(songData[i].name);
+		//console.log(songData[i].external_urls.spotify);
 		parsedData[i] = {
 			id: songData[i].id,
 			title: songData[i].name,
-			href: songData[i].href,
+			href: songData[i].external_urls.spotify,
 			images: songData[i].images,
 			genres: arrToString(songData[i].genres),
 			type: songData[i].type
@@ -69,7 +67,7 @@ function arrToString(array) {
 	var newString = '';
 
 	if (arrLen === 0) {
-		//return 'null';
+		return ' ';
 	}
 	
 	if (arrLen === 1) {

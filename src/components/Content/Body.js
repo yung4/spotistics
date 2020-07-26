@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Nav, ListGroup } from 'react-bootstrap';
 
 import Statistics from '../Statistics/Statistics';
 import TopArtists from '../TopArtists/TopArtists';
@@ -48,47 +49,61 @@ class Body extends Component {
 	}
 	
 	render() {
+		//console.log(this.props.contentType);
 		
-		if (this.props.contentType === 0) {
+		if (this.props.contentType == 0) {
 			return (
-				<div>
-					<h1>Top Artists</h1>
-					
-					<button onClick={() => this.updateArtistTimeRangeState('short_term')}>
-						1 month
-					</button>
-
-					<button onClick={() => this.updateArtistTimeRangeState('medium_term')}>
-						6 months
-					
-					</button>
-					
-					<button onClick={() => this.updateArtistTimeRangeState('long_term')}>
-						All time
-					</button>					
+				<ListGroup variant='flush'>
+					<ListGroup.Item>
+						<Nav
+							className='justify-content-center'
+							variant='pills'
+							defaultActiveKey='short_term'
+							onSelect={(timeRange) => this.updateArtistTimeRangeState(timeRange)}
+						>
+							<Nav.Item>
+								<Nav.Link eventKey='short_term'>1 Month</Nav.Link>
+							</Nav.Item>
+							
+							<Nav.Item>
+								<Nav.Link eventKey='medium_term'>6 Months</Nav.Link>
+							</Nav.Item>
+							
+							<Nav.Item>
+								<Nav.Link eventKey='long_term'>All Time</Nav.Link>
+							</Nav.Item>
+						</Nav>		
+					</ListGroup.Item>
 					
 					< TopArtists topArtists={this.state.topArtists} />
-				</div>
+				</ListGroup>
 			)
-		} else if (this.props.contentType === 1) {
+		} else if (this.props.contentType == 1) {
 			return (
-				<div>
-					<h1>Top Tracks</h1>
-					
-					<button onClick={() => this.updateTrackTimeRangeState('short_term')}>
-						1 month
-					</button>
-					
-					<button onClick={() => this.updateTrackTimeRangeState('medium_term')}>
-						6 months
-					</button>
-					
-					<button onClick={() => this.updateTrackTimeRangeState('long_term')}>
-						All time
-					</button>
+				<ListGroup variant='flush'>
+					<ListGroup.Item>
+						<Nav
+							className='justify-content-center'
+							variant='pills'
+							defaultActiveKey='short_term'
+							onSelect={(timeRange) => this.updateTrackTimeRangeState(timeRange)}
+						>
+							<Nav.Item>
+								<Nav.Link eventKey='short_term'>1 Month</Nav.Link>
+							</Nav.Item>
+							
+							<Nav.Item>
+								<Nav.Link eventKey='medium_term'>6 Months</Nav.Link>
+							</Nav.Item>
+							
+							<Nav.Item>
+								<Nav.Link eventKey='long_term'>All Time</Nav.Link>
+							</Nav.Item>
+						</Nav>	
+					</ListGroup.Item>					
 					
 					< TopTracks topTracks={this.state.topTracks} />
-				</div>
+				</ListGroup>
 			)
 		} else {
 			return (

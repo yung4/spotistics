@@ -1,0 +1,18 @@
+.header {
+	#background-color: #bbb;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.logout {
+	text-align: right;
+}
+
+.userImg {
+	padding: 5px;
+}
+
+h1 {
+	#color: red;
+	font-size: 200px;
+}
