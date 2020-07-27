@@ -28,7 +28,7 @@ function getAuthorization() {
 		paramObj.expiresIn = paramArr[2].slice(paramArr[2].indexOf('=') + 1);
 	} catch (e) {
 		console.log(e);
-		//return false;
+		return false;
 	}
 	
 	//console.log(paramObj);
