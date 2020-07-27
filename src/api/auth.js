@@ -5,19 +5,14 @@ function getAuthorization() {
 	const url = urlObj.href;
 	//const origin = urlObj.origin;
 	
-	if (url.indexOf('?') !== -1) {
+	if (url.indexOf('#') === -1) {
 		return false;
 	}
 	
 	console.log(url);
 	
-	const params = url.slice(url.lastIndexOf('/'));
+	const params = url.slice(url.indexOf('#'));
 	console.log(params);
-	
-	if ((params === '?error=access_denied') || (params === '')) {
-		console.log('Sorry, something went wrong. Please try again later.');
-		return false;
-	}
 	
 	const paramArr = params.split('&');
 	console.log(paramArr);
