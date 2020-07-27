@@ -15,37 +15,31 @@ class Body extends Component {
 			topArtists: [],
 			topTracks: [],
 			
-			artistTimeRange: 'short_term',
-			trackTimeRange: 'short_term'
+			timeRange: 'short_term',
 		};
 	}
 	
 	componentDidMount() {
 		const accessToken = this.props.hashFragment.accessToken;
 		
-		getTopArtists(accessToken, this.state.artistTimeRange)
+		getTopArtists(accessToken, this.state.timeRange)
 			.then((response) => (this.setState({ topArtists: response })))
 			.catch(this.props.errorFunc);
 			
-		getTopTracks(accessToken, this.state.trackTimeRange)
+		getTopTracks(accessToken, this.state.timeRange)
 			.then((response) => (this.setState({ topTracks: response })))
 			.catch(this.props.errorFunc);
 	}
 	
 	componentDidUpdate(prevProps, prevState) {
-		if ((prevState.artistTimeRange !== this.state.artistTimeRange) ||
-			(prevState.trackTimeRange !== this.state.trackTimeRange)) {
+		if (prevState.timeRange !== this.state.timeRange) {
 			console.log(this.state.artistTimeRange);
 			this.componentDidMount();
 		}
 	}
 	
-	updateArtistTimeRangeState = (timeRange) => {
-		this.setState({ artistTimeRange: timeRange });
-	}
-	
-	updateTrackTimeRangeState = (timeRange) => {
-		this.setState({ trackTimeRange: timeRange });
+	updateTimeRangeState = (timeRange) => {
+		this.setState({ timeRange: timeRange });
 	}
 	
 	render() {
@@ -55,24 +49,7 @@ class Body extends Component {
 			return (
 				<ListGroup variant='flush'>
 					<ListGroup.Item>
-						<Nav
-							className='justify-content-center'
-							variant='pills'
-							defaultActiveKey='short_term'
-							onSelect={(timeRange) => this.updateArtistTimeRangeState(timeRange)}
-						>
-							<Nav.Item>
-								<Nav.Link eventKey='short_term'>1 Month</Nav.Link>
-							</Nav.Item>
-							
-							<Nav.Item>
-								<Nav.Link eventKey='medium_term'>6 Months</Nav.Link>
-							</Nav.Item>
-							
-							<Nav.Item>
-								<Nav.Link eventKey='long_term'>All Time</Nav.Link>
-							</Nav.Item>
-						</Nav>		
+						
 					</ListGroup.Item>
 					
 					< TopArtists topArtists={this.state.topArtists} />
@@ -85,8 +62,8 @@ class Body extends Component {
 						<Nav
 							className='justify-content-center'
 							variant='pills'
-							defaultActiveKey='short_term'
-							onSelect={(timeRange) => this.updateTrackTimeRangeState(timeRange)}
+							defaultActiveKey={this.state.timeRange}
+							onSelect={(timeRange) => this.updateTimeRangeState(timeRange)}
 						>
 							<Nav.Item>
 								<Nav.Link eventKey='short_term'>1 Month</Nav.Link>
