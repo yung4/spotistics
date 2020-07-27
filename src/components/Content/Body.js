@@ -4,6 +4,7 @@ import { Nav, ListGroup } from 'react-bootstrap';
 import Statistics from '../Statistics/Statistics';
 import TopArtists from '../TopArtists/TopArtists';
 import TopTracks from '../TopTracks/TopTracks';
+import PillNav from './PillNav';
 
 import { getTopArtists, getTopTracks } from '../../api/apiRequest';
 
