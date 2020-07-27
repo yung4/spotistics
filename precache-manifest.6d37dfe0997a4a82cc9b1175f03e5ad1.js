@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "064628dcdba938e5ebbb851dcac81287",
+    "revision": "054ce439a73b9fa179c1a5ea4189adb6",
     "url": "/spotistics/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/spotistics/static/css/2.af3c1da9.chunk.css"
   },
   {
-    "revision": "4c669b2efe86791fceb0",
-    "url": "/spotistics/static/css/main.3b2cc019.chunk.css"
+    "revision": "61d98a3be77c0c33045c",
+    "url": "/spotistics/static/css/main.1e899195.chunk.css"
   },
   {
     "revision": "7ba01bf14884fa3dfd85",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/spotistics/static/js/2.8a0577eb.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4c669b2efe86791fceb0",
-    "url": "/spotistics/static/js/main.c4e0c49e.chunk.js"
+    "revision": "61d98a3be77c0c33045c",
+    "url": "/spotistics/static/js/main.c95f2b99.chunk.js"
   },
   {
     "revision": "d94e085128e76f4e5c36",
