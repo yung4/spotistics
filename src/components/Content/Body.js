@@ -49,7 +49,7 @@ class Body extends Component {
 			return (
 				<ListGroup variant='flush'>
 					<ListGroup.Item>
-						
+						< PillNav timeRange={this.state.timeRange} updateTimeRangeState={this.updateTimeRangeState} />		
 					</ListGroup.Item>
 					
 					< TopArtists topArtists={this.state.topArtists} />
@@ -59,24 +59,7 @@ class Body extends Component {
 			return (
 				<ListGroup variant='flush'>
 					<ListGroup.Item>
-						<Nav
-							className='justify-content-center'
-							variant='pills'
-							defaultActiveKey={this.state.timeRange}
-							onSelect={(timeRange) => this.updateTimeRangeState(timeRange)}
-						>
-							<Nav.Item>
-								<Nav.Link eventKey='short_term'>1 Month</Nav.Link>
-							</Nav.Item>
-							
-							<Nav.Item>
-								<Nav.Link eventKey='medium_term'>6 Months</Nav.Link>
-							</Nav.Item>
-							
-							<Nav.Item>
-								<Nav.Link eventKey='long_term'>All Time</Nav.Link>
-							</Nav.Item>
-						</Nav>	
+						< PillNav timeRange={this.state.timeRange} updateTimeRangeState={this.updateTimeRangeState} />		
 					</ListGroup.Item>					
 					
 					< TopTracks topTracks={this.state.topTracks} />
