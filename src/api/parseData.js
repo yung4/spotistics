@@ -24,15 +24,16 @@ function parseTracks(songData) {
 	var parsedData = [];
 	
 	for (var i = 0; i < songData.length; i++) {
-		//console.log(songData[i].external_urls.spotify);
+		//console.log(songData[i]);
 		parsedData[i] = {
-			id: songData[i].id,
+			id: i + 1,
 			title: songData[i].name,
 			artistName: songData[i].artists[0].name,
 			albumTitle: songData[i].album.name,
-			href: songData[i].external_urls.spotify,
+			href: songData[i].uri,
 			images: songData[i].album.images,
 			releaseDate: songData[i].album.release_date,
+			rank: i,
 			type: songData[i].type
 		}
 	}
@@ -46,11 +47,11 @@ function parseArtists(songData) {
 	var parsedData = [];
 	
 	for (var i = 0; i < songData.length; i++) {
-		//console.log(songData[i].external_urls.spotify);
+		//console.log(songData[i]);
 		parsedData[i] = {
-			id: songData[i].id,
+			id: i + 1,
 			title: songData[i].name,
-			href: songData[i].external_urls.spotify,
+			href: songData[i].uri,
 			images: songData[i].images,
 			genres: arrToString(songData[i].genres),
 			type: songData[i].type

@@ -13,7 +13,7 @@ async function spotifyRequest(accessToken, url) {
 			'Authorization': 'Bearer ' + accessToken
 		},
 		success: function(response) {
-			console.log(response);
+			//console.log(response);
 			songData = parseData(response);
 		}
 	});

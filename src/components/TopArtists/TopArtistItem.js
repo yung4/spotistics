@@ -6,11 +6,16 @@ import '../../style/content.css';
 
 class TopArtistItem extends Component {
 	render() {
-		const imgSize = 64;
+		const imgSize = 50;
+	
 		
 		return (
-			<ListGroup.Item action target='_blank' href={this.props.artist.href}>
-				<Row>
+			<ListGroup.Item action target='_blank' href={this.props.artist.href} style = {{padding: 5}}>
+				<Row >
+					<Col xs={1} className='my-auto' style={{textAlign: 'right'}}>
+						<h3>{this.props.artist.id}</h3>
+					</Col>
+					
 					<Image 
 						src={this.props.artist.images[2].url} 
 						height={imgSize} 
@@ -19,7 +24,7 @@ class TopArtistItem extends Component {
 					/>
 					
 					<Col className='my-auto'>
-						<h3> {this.props.artist.title} </h3>
+						<h3 style={{fontSize:20}}> {this.props.artist.title} </h3>
 						<p style={{margin: 0}}> {this.props.artist.genres} </p>
 					</Col>
 				</Row>

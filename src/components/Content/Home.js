@@ -45,7 +45,7 @@ class Home extends Component {
 	
 	setView = (viewNum) => {
 		this.setState({ contentType: viewNum });
-		console.log(this.state.contentType);
+		//console.log(this.state.contentType);
 	}
 	
 	render() {
