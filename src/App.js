@@ -11,8 +11,8 @@ class App extends Component {
 		super();
 		
 		this.state = {
-			loggedInStatus: getAuthorization(),
-			hashFragment: paramObj,
+			loggedInStatus: false,
+			hashFragment: {},
 		}
 	}
 	
