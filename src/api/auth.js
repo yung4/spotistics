@@ -24,8 +24,8 @@ function getAuthorization() {
 	
 	try {
 		paramObj.accessToken = paramArr[0].slice(paramArr[0].indexOf('=') + 1);
-		//paramObj.tokenType = paramArr[1].slice(paramArr[1].indexOf('=') + 1);
-		//paramObj.expiresIn = paramArr[2].slice(paramArr[2].indexOf('=') + 1);
+		paramObj.tokenType = paramArr[1].slice(paramArr[1].indexOf('=') + 1);
+		paramObj.expiresIn = paramArr[2].slice(paramArr[2].indexOf('=') + 1);
 	} catch (e) {
 		console.log(e);
 		return false;
