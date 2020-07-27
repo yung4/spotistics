@@ -40,7 +40,7 @@ class Home extends Component {
 	
 	errorFunc = (error) => {
 		console.log(error);
-		//window.location.replace(process.env.REACT_APP_REDIRECT_URI);
+		window.location.replace(process.env.REACT_APP_REDIRECT_URI);
 	}
 	
 	setView = (viewNum) => {

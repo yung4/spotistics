@@ -7,7 +7,6 @@ import '../../style/content.css';
 class TopArtistItem extends Component {
 	render() {
 		const imgSize = 50;
-	
 		
 		return (
 			<ListGroup.Item action target='_blank' href={this.props.artist.href} style = {{padding: 5}}>
@@ -17,7 +16,7 @@ class TopArtistItem extends Component {
 					</Col>
 					
 					<Image 
-						src={this.props.artist.images[2].url} 
+						src={this.props.artist.image} 
 						height={imgSize} 
 						width={imgSize}
 						roundedCircle 

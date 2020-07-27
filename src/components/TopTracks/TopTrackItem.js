@@ -18,7 +18,7 @@ class TopTrackItem extends Component {
 					</Col>
 					
 					<Image 
-						src={this.props.track.images[2].url} 
+						src={this.props.track.image} 
 						height={imgSize} 
 						width={imgSize}
 						roundedCircle

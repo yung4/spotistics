@@ -31,9 +31,8 @@ function parseTracks(songData) {
 			artistName: songData[i].artists[0].name,
 			albumTitle: songData[i].album.name,
 			href: songData[i].uri,
-			images: songData[i].album.images,
+			image: chooseSmallestImage(songData[i].album.images),
 			releaseDate: songData[i].album.release_date,
-			rank: i,
 			type: songData[i].type
 		}
 	}
@@ -52,7 +51,7 @@ function parseArtists(songData) {
 			id: i + 1,
 			title: songData[i].name,
 			href: songData[i].uri,
-			images: songData[i].images,
+			image: chooseSmallestImage(songData[i].images),
 			genres: arrToString(songData[i].genres),
 			type: songData[i].type
 		}
@@ -84,6 +83,28 @@ function arrToString(array) {
 	}
 
   return newString;
+}
+
+function chooseSmallestImage(array) {
+	const arrLen = array.length;
+	
+	if (arrLen === 0) {
+		return ' ';
+	}
+	
+	if (arrLen === 1) {
+		return array[0].url;
+	}
+	
+	var smallestImg = array[0];
+	
+	for (var i = 0; i < arrLen; i++) {
+		if (smallestImg.height > array[i].height) {
+			smallestImg = array[i];
+		}
+	}
+	
+	return smallestImg.url;
 }
 
 export { parseData };
