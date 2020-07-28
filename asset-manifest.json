@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/spotistics/static/css/main.1e899195.chunk.css",
-    "main.js": "/spotistics/static/js/main.52ba4b55.chunk.js",
-    "main.js.map": "/spotistics/static/js/main.52ba4b55.chunk.js.map",
+    "main.js": "/spotistics/static/js/main.30d61542.chunk.js",
+    "main.js.map": "/spotistics/static/js/main.30d61542.chunk.js.map",
     "runtime-main.js": "/spotistics/static/js/runtime-main.520f4765.js",
     "runtime-main.js.map": "/spotistics/static/js/runtime-main.520f4765.js.map",
     "static/css/2.af3c1da9.chunk.css": "/spotistics/static/css/2.af3c1da9.chunk.css",
     "static/js/2.49d9ba40.chunk.js": "/spotistics/static/js/2.49d9ba40.chunk.js",
     "static/js/2.49d9ba40.chunk.js.map": "/spotistics/static/js/2.49d9ba40.chunk.js.map",
     "index.html": "/spotistics/index.html",
-    "precache-manifest.444a913da7c90b0dbb96690de6e09f97.js": "/spotistics/precache-manifest.444a913da7c90b0dbb96690de6e09f97.js",
+    "precache-manifest.b94fed60a748f1e2799332c49858de2d.js": "/spotistics/precache-manifest.b94fed60a748f1e2799332c49858de2d.js",
     "service-worker.js": "/spotistics/service-worker.js",
     "static/css/2.af3c1da9.chunk.css.map": "/spotistics/static/css/2.af3c1da9.chunk.css.map",
     "static/css/main.1e899195.chunk.css.map": "/spotistics/static/css/main.1e899195.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.af3c1da9.chunk.css",
     "static/js/2.49d9ba40.chunk.js",
     "static/css/main.1e899195.chunk.css",
-    "static/js/main.52ba4b55.chunk.js"
+    "static/js/main.30d61542.chunk.js"
   ]
 }
