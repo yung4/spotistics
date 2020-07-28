@@ -16,7 +16,7 @@ class Footer extends Component {
 	
 		return (
 			<>
-				<a onClick={handleShow}>about</a>
+				<button onClick={handleShow}>about</button>
 
 				<Modal show={show} onHide={handleClose}>
 					<Modal.Header closeButton>
