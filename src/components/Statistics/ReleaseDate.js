@@ -51,7 +51,7 @@ class ReleaseDate extends Component {
                     {
                         label: 'Track Release Date',
                         data: yAxisNumTracks,
-                        backgroundColor: 'rgba(157, 87, 255)'
+                        backgroundColor: '#0074d9'
                         
                     }
                 ] 

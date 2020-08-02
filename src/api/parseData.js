@@ -112,7 +112,7 @@ function parsePlaylistList(data) {
 }
 
 function parsePlaylistItems(data) {
-	console.log(data);
+	//console.log(data);
 	var parsedData = [];
 	data = data.items;
 

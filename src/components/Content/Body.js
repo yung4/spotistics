@@ -30,9 +30,14 @@ class Body extends Component {
 	}
 	
 	componentDidMount() {
-		this.fetchTop();
-		this.fetchPlaylists();
-		this.fetchHistory();
+		try {
+			this.fetchTop();
+			this.fetchPlaylists();
+			this.fetchHistory();
+		} catch (e) {
+			console.log(e);
+			this.props.errorFunc();
+		}
 	}
 	
 	componentDidUpdate(prevProps, prevState) {
