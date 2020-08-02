@@ -9,13 +9,13 @@ function getAuthorization() {
 		return false;
 	}
 	
-	console.log(url);
+	//console.log(url);
 	
 	const params = url.slice(url.indexOf('#'));
-	console.log(params);
+	//console.log(params);
 	
 	const paramArr = params.split('&');
-	console.log(paramArr);
+	//console.log(paramArr);
 	
 	try {
 		paramObj.accessToken = paramArr[0].slice(paramArr[0].indexOf('=') + 1);

@@ -14,17 +14,21 @@ class Header extends Component {
 	}
 
 	componentDidMount() {
+		this.setUserInfo();
+	}
+	
+	componentDidUpdate(prevProps, prevState) {
+		if (prevProps.user !== this.props.user) {
+			this.setUserInfo();
+		}
+	}
+
+	setUserInfo = () => {
 		try {
 			this.setState({ userImg: this.props.user.images[0].url });
 			this.setState({ userName: this.props.user.display_name });
 		} catch (e) {
 			//console.log(e);
-		}
-	}
-	
-	componentDidUpdate(prevProps, prevState) {
-		if (prevProps.user !== this.props.user) {
-			this.componentDidMount();
 		}
 	}
 

@@ -1,19 +1,57 @@
 import React, { Component } from 'react';
 
+import DateAdded from './DateAdded';
+import ReleaseDate from './ReleaseDate';
+
+import { getPlaylistItems } from '../../api/apiRequest';
+import { parsePlaylistItems } from '../../api/parseData';
+
 class Statistics extends Component {
+	constructor() {
+		super()
+
+		this.state = {
+			playlistItems: {}
+		}
+	}
+
+	componentDidMount() {
+		this.fetchPlaylistData();
+	}
+
+	componentDidUpdate(prevProps, prevState) {
+		if (prevProps.selectedPlaylist !== this.props.selectedPlaylist) {
+			this.fetchPlaylistData();
+		}
+	}
+
+	fetchPlaylistData = async () => {
+		const accessToken = this.props.accessToken;
+
+		var playlistObj = await getPlaylistItems(accessToken, this.props.selectedPlaylist.id);
+
+		playlistObj = await this.props.checkNext(playlistObj);
+
+		const playlistItems = parsePlaylistItems(playlistObj);
+
+		this.setState({ playlistItems: playlistItems });
+
+		//console.log(playlistItems);
+	}
+
 	render() {
-		
-		//const songList = this.props.topTracks.p
-		/*return this.props.song_list.map((song_list) => (
-			<SongData key={song_list.id} song={song_list}/>
-		));*/
-		
-		/*return this.props.topTracks.map((topTracks) => (
-			<SongData key={topTracks.id} song = {topTracks} />
-		));*/
-		return (
-			<h2> sorry, this is currently a work in progress. pls come back later! </h2>
-		);
+		//console.log(this.props.selectedPlaylist);
+		//console.log(this.state.playlistItems);
+
+		if (this.props.statsMode === 'datesAdded') {
+			return (
+				<DateAdded playlistItems={this.state.playlistItems}/>
+			)
+		} else {
+			return (
+				<ReleaseDate playlistItems={this.state.playlistItems}/>
+			)
+		}
 	}
 }
 

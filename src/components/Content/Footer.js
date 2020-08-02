@@ -39,7 +39,13 @@ class Footer extends Component {
 					</Col>
 					
 					<Col>
-						<a target='_blank' href='https://github.com/yung4/spotistics'>github repo</a>
+						<a 
+							rel='noopener noreferrer' 
+							target='_blank' 
+							href='https://github.com/yung4/spotistics'
+						>
+							github repo
+						</a>
 					</Col>
 					
 					<Col>

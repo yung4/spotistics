@@ -2,17 +2,13 @@ import React, { Component } from 'react';
 import { Row, Col, Image, ListGroup } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
-class TopTrackItem extends Component {
+class HistoryItem extends Component {
 	render() {
 		const imgSize = 50;
 		
 		return (
 			<ListGroup.Item action target='_blank' href={this.props.track.href} style = {{padding: 5}}>
-				<Row >
-					<Col xs={1} className='my-auto' style={{textAlign: 'right'}}>
-						<h3>{this.props.track.id}</h3>
-					</Col>
-					
+				<Row style={{paddingLeft: 15, paddingRight: 15}}>
 					<Image 
 						src={this.props.track.image} 
 						height={imgSize} 
@@ -26,6 +22,12 @@ class TopTrackItem extends Component {
 							{this.props.track.artistName} - {this.props.track.albumTitle}
 						</p>
 					</Col>
+
+                    <Col className='my-auto' style={{textAlign: 'right'}}>
+                        <p style={{margin: 0, fontSize:16}}>
+                            {this.props.track.playedAt}
+                        </p>
+                    </Col>
 				</Row>
 			</ListGroup.Item>
 		)
@@ -33,8 +35,8 @@ class TopTrackItem extends Component {
 }
 
 // PropTypes
-TopTrackItem.propTypes = {
+HistoryItem.propTypes = {
 	track: PropTypes.object.isRequired
 }
 
-export default TopTrackItem;
+export default HistoryItem;
