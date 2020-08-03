@@ -176,7 +176,7 @@ function formatDate(timestamp) {
 	const dateObj = new Date(parsedDate);
 
 	const day = dateObj.getDate();
-	const month = dateObj.getMonth();
+	const month = dateObj.getMonth() + 1;
 	const year = dateObj.getFullYear();
 
 	const hour = dateObj.getHours();
