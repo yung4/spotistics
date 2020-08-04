@@ -49,7 +49,7 @@ class ReleaseDate extends Component {
 
                 datasets: [
                     {
-                        label: 'Track Release Date',
+                        label: 'Track Release Year',
                         data: yAxisNumTracks,
                         backgroundColor: '#0074d9'
                         
@@ -83,15 +83,23 @@ class ReleaseDate extends Component {
                                 },
                                 bounds: 'data',
                                 ticks: {
-                                    source: 'labels'
+                                    source: 'labels',
+                                    autoSkip: true,
+                                    autoSkipPadding: 5
                                 },
                             }],
                             yAxes: [{
                                 ticks: {
-                                    autoSkip: true,
-                                    beginAtZero: true
+                                    beginAtZero: true,
                                 }
-                            }]
+                            }],
+                        },
+                        layout: {
+                            padding: {
+                                right: 20,
+                                left: 10,
+                                bottom: 15
+                            }
                         }
                     }}
                 />

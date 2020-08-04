@@ -10,7 +10,10 @@ class DateAdded extends Component {
 
         this.state = {
             redraw: true,
-            data: {}
+            data: {
+                labels: [],
+                datasets: []
+            }
         }
     }
 
@@ -63,7 +66,10 @@ class DateAdded extends Component {
     }
 
 	render() {
-        //console.log(this.state.data);
+        console.log(this.state.data);
+        //console.log(this.state.data.labels);
+        //console.log(this.state.data.labels.length);
+        
 		
 		return (
 			<Container>
@@ -83,15 +89,25 @@ class DateAdded extends Component {
                                 },
                                 bounds: 'data',
                                 ticks: {
-                                    source: 'auto'
+                                    source: 'auto',
                                 },
+                                barPercentage: Math.pow(Math.log10(this.state.data.labels.length), 1.5)
                             }],
                             yAxes: [{
                                 ticks: {
                                     autoSkip: true,
-                                    beginAtZero: true
+                                    beginAtZero: true,
                                 }
-                            }]
+                            }],
+                        },
+                        dataset: {
+                            barPercentage: 4
+                        },
+                        layout: {
+                            padding: {
+                                right: 20,
+                                left: 10
+                            }
                         }
                     }}
                 />

@@ -30,6 +30,7 @@ function parseData(data) {
 	return parsedData;
 }
 
+// helper parse functions
 function parseTrackItem(track) {
 	return {
 		id: track.id,
@@ -126,6 +127,7 @@ function parsePlaylistItems(data) {
 	return parsedData;
 }
 
+// helper helper functions
 function arrToString(array) {
 	const arrLen = array.length;
 	var newString = '';

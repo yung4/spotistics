@@ -19,7 +19,13 @@ class Home extends Component {
 	}
 	
 	componentDidMount() {
-		this.fetchData();
+		try {
+			this.fetchData();
+		} catch (e) {
+			console.log(e);
+			this.errorFunc();
+		}
+		
 	}
 	
 	componentDidUpdate(prevProps, prevState) {

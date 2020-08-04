@@ -15,6 +15,10 @@ async function spotifyRequestMe(accessToken, url) {
 		success: (response) => {
 			//console.log(response);
 			songData = parseData(response);
+		},
+		error: (error) => {
+			console.log(error);
+			handleError(error.status);
 		}
 	});
 	
@@ -93,6 +97,45 @@ function getPlaylistItems(accessToken, playlistID, limit = 100, offset = 0) {
 				);
 
 	return spotifyRequestPlaylist(accessToken, url);
+}
+
+function handleError(status) {
+	switch (status) {
+		case 400: {
+			console.log('400: Bad Request');
+			break;
+		}
+		case 401: {
+			console.log('401: Unauthorized');
+			break;
+		}
+		case 403: {
+			console.log('403: Server refusing to fulfill request');
+			break;
+		}
+		case 404: {
+			console.log('404: Resource could not be found');
+			break;
+		}
+		case 429: {
+			console.log('429: Too many requests; Rate limiting applied');
+			break;
+		}
+		case 502: {
+			console.log('502: Bad Gateway');
+			break;
+		}
+		case 503: {
+			console.log('503: Service Unavailable');
+			break;
+		}
+		default: {
+			console.log(status);
+			break;
+		}
+	}
+
+	window.location.replace(process.env.REACT_APP_REDIRECT_URI);
 }
 
 export { getTopArtists, getTopTracks, getUser, getRecentlyPlayed,

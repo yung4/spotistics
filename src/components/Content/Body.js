@@ -8,6 +8,7 @@ import History from '../History/History';
 
 import PillNav from '../Navigation/PillNav';
 import StatsNav from '../Navigation/StatsNav';
+import HistoryNav from '../Navigation/HistoryNav';
 
 import { getTopArtists, getTopTracks, getRecentlyPlayed, getPlaylistList, getNext } from '../../api/apiRequest';
 import { parsePlaylistList } from '../../api/parseData';
@@ -24,8 +25,9 @@ class Body extends Component {
 
 			timeRange: 'short_term',
 
-			statsMode: 'datesAdded',
 			selectedPlaylist: {},
+			
+			statsMode: 'datesAdded',
 		};
 	}
 	
@@ -46,6 +48,7 @@ class Body extends Component {
 		}
 	}
 
+	// fetch data
 	fetchTop = async () => {
 		const accessToken = this.props.hashFragment.accessToken;
 
@@ -78,6 +81,7 @@ class Body extends Component {
 		//console.log(this.state.history);
 	}
 
+	//helper function for checking if there are more requests to be made
 	checkNext = async (object) => {
 		const accessToken = this.props.hashFragment.accessToken;
 
@@ -95,6 +99,7 @@ class Body extends Component {
 		return object;
 	}
 
+	// set state helper functions
 	updatePlaylistList = (playlistList) => {
 		this.setState({ playlistList: playlistList })
 		this.setState({ selectedPlaylist: playlistList[0] })
@@ -171,7 +176,7 @@ class Body extends Component {
 		} else {
 			return (
 				<ListGroup variant='flush'>
-					<History history={this.state.history} />
+					<History history={this.state.history}/>
 				</ListGroup>
 			)
 		}

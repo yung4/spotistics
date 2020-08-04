@@ -7,7 +7,7 @@ class TopTrackItem extends Component {
 		const imgSize = 50;
 		
 		return (
-			<ListGroup.Item action target='_blank' href={this.props.track.href} style = {{padding: 5}}>
+			<ListGroup.Item action href={this.props.track.href} style = {{padding: 5}}>
 				<Row >
 					<Col xs={1} className='my-auto' style={{textAlign: 'right'}}>
 						<h3>{this.props.track.id}</h3>
