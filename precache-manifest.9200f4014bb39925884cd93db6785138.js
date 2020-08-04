@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a03dd5a4e3d86a0e3c6c36d0c624b882",
+    "revision": "4d711317c8a7035fc8acd36f131b4c0a",
     "url": "/spotistics/index.html"
   },
   {
-    "revision": "0b74d5a0462f7dd76f3d",
+    "revision": "d62bc328e30fc8b65615",
     "url": "/spotistics/static/css/2.af3c1da9.chunk.css"
   },
   {
-    "revision": "cd925d96246acb8f3992",
+    "revision": "808da5971f08f77d7ece",
     "url": "/spotistics/static/css/main.1e899195.chunk.css"
   },
   {
-    "revision": "0b74d5a0462f7dd76f3d",
-    "url": "/spotistics/static/js/2.33df6857.chunk.js"
+    "revision": "d62bc328e30fc8b65615",
+    "url": "/spotistics/static/js/2.4eaa2c2f.chunk.js"
   },
   {
     "revision": "1525154212010fb0aadce756c13857c0",
-    "url": "/spotistics/static/js/2.33df6857.chunk.js.LICENSE.txt"
+    "url": "/spotistics/static/js/2.4eaa2c2f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "cd925d96246acb8f3992",
-    "url": "/spotistics/static/js/main.ed706c95.chunk.js"
+    "revision": "808da5971f08f77d7ece",
+    "url": "/spotistics/static/js/main.76e0a762.chunk.js"
   },
   {
     "revision": "d94e085128e76f4e5c36",
