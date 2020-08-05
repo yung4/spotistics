@@ -3,6 +3,8 @@ import { Accordion, Button, Card } from 'react-bootstrap';
 
 import About from './About';
 
+//import LoginImage from '../assets/From Up On Poppy Hill (17).png'
+
 var link = ('https://accounts.spotify.com/authorize?' + 
             'client_id=' + process.env.REACT_APP_CLIENT_ID + 
             '&redirect_uri=' + process.env.REACT_APP_REDIRECT_URI + 
@@ -13,11 +15,16 @@ var link = ('https://accounts.spotify.com/authorize?' +
 			
 			//TODO: figure out how to use state for added security
 
+var loginStyle = {
+	textAlign: 'center',
+	//backgroundImage: `url(${LoginImage})`
+}
+
 class Login extends Component {
 	render() {
 		return (
-			<div style={{textAlign: 'center'}}>
-				<h1>Spotistics</h1>
+			<div style={loginStyle}>
+				<h1 style={{ fontSize: 50 }}>Spotistics</h1>
 				
 				<Accordion>
 					<Card>

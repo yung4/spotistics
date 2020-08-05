@@ -8,7 +8,6 @@ import History from '../History/History';
 
 import PillNav from '../Navigation/PillNav';
 import StatsNav from '../Navigation/StatsNav';
-import HistoryNav from '../Navigation/HistoryNav';
 
 import { getTopArtists, getTopTracks, getRecentlyPlayed, getPlaylistList, getNext } from '../../api/apiRequest';
 import { parsePlaylistList } from '../../api/parseData';

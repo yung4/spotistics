@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react';
-import { Container, Row, Col, Modal } from 'react-bootstrap';
+import { Container, Row, Col, Modal, Button } from 'react-bootstrap';
 
 import About from '../About';
 
@@ -16,7 +16,7 @@ class Footer extends Component {
 	
 		return (
 			<>
-				<button onClick={handleShow}>about</button>
+				<Button variant='link' onClick={handleShow}>about</Button>
 
 				<Modal show={show} onHide={handleClose}>
 					<Modal.Header closeButton>

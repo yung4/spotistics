@@ -10,7 +10,10 @@ class ReleaseDate extends Component {
 
         this.state = {
             redraw: true,
-            data: {}
+            data: {
+                labels: [],
+                datasets: []
+            }
         }
     }
 
@@ -45,16 +48,15 @@ class ReleaseDate extends Component {
         }
 
         var chartData = {
-                labels: xAxisDate,
+            labels: xAxisDate,
 
-                datasets: [
-                    {
-                        label: 'Track Release Year',
-                        data: yAxisNumTracks,
-                        backgroundColor: '#0074d9'
-                        
-                    }
-                ] 
+            datasets: [
+                {
+                    label: 'Track Release Year',
+                    data: yAxisNumTracks,
+                    backgroundColor: '#0074d9'
+                }
+            ] 
         }
 
         //console.log(chartData);
@@ -85,7 +87,9 @@ class ReleaseDate extends Component {
                                 ticks: {
                                     source: 'labels',
                                     autoSkip: true,
-                                    autoSkipPadding: 5
+                                    autoSkipPadding: 5,
+                                    minRotation: (this.state.data.labels.length < 10) ? 0 : 45,
+                                    padding: 5
                                 },
                             }],
                             yAxes: [{

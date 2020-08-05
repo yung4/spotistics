@@ -48,16 +48,15 @@ class DateAdded extends Component {
         }
 
         var chartData = {
-                labels: xAxisDate,
+            labels: xAxisDate,
 
-                datasets: [
-                    {
-                        label: 'Tracks Added',
-                        data: yAxisNumTracks,
-                        backgroundColor: '#0074d9'
-                        
-                    }
-                ] 
+            datasets: [
+                {
+                    label: 'Tracks Added',
+                    data: yAxisNumTracks,
+                    backgroundColor: '#0074d9' 
+                }
+            ] 
         }
 
         //console.log(chartData);
@@ -66,7 +65,7 @@ class DateAdded extends Component {
     }
 
 	render() {
-        console.log(this.state.data);
+        //console.log(this.state.data);
         //console.log(this.state.data.labels);
         //console.log(this.state.data.labels.length);
         
@@ -115,8 +114,6 @@ class DateAdded extends Component {
 		);
 	}
 }
-
-
 
 
 export default DateAdded;
