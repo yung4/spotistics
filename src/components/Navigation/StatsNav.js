@@ -4,6 +4,30 @@ import { Nav, NavDropdown } from 'react-bootstrap';
 import StatsNavDropdown from './StatsNavDropdown';
 
 class StatsNav extends Component {
+	constructor() {
+		super();
+
+		this.state = {
+			playlistTitle: 'Playlist Not Found'
+		}
+	}
+
+	componentDidMount() {
+		if (this.props.selectedPlaylist) {
+			this.updateTitle(this.props.selectedPlaylist.title);
+		}
+	}
+
+	componentDidUpdate(prevProps, prevState) {
+		if ((this.props.selectedPlaylist) &&
+			(prevProps.selectedPlaylist.title !== this.props.selectedPlaylist.title)) {
+			this.updateTitle(this.props.selectedPlaylist.title);
+		}
+	}
+
+	updateTitle = (title) => {
+		this.setState({ playlistTitle: title });
+	}
 	
 
 	render() {
@@ -30,7 +54,7 @@ class StatsNav extends Component {
 				
 				
 				<NavDropdown 
-					title={this.props.selectedPlaylist.title || 'Playlist Not Found'}
+					title={ this.state.playlistTitle }
 					defaultactivekey={this.props.selectedPlaylist}
 					onSelect={(selectedPlaylist) => this.props.choosePlaylist(selectedPlaylist)}
 				>

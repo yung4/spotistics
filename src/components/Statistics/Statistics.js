@@ -16,16 +16,24 @@ class Statistics extends Component {
 	}
 
 	componentDidMount() {
-		this.fetchPlaylistData();
+		if (this.props.selectedPlaylist) {
+			this.fetchPlaylistData();
+		}
 	}
 
 	componentDidUpdate(prevProps, prevState) {
-		if (prevProps.selectedPlaylist !== this.props.selectedPlaylist) {
+		if ((this.props.selectedPlaylist) && 
+			(prevProps.selectedPlaylist !== this.props.selectedPlaylist)) {
 			this.fetchPlaylistData();
 		}
 	}
 
 	fetchPlaylistData = async () => {
+		if (!this.props.selectedPlaylist) {
+			return -1;
+		}
+		console.log(this.state.playlistItems)
+
 		const accessToken = this.props.accessToken;
 
 		var playlistObj = await getPlaylistItems(accessToken, this.props.selectedPlaylist.id);
